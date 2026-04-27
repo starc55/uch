@@ -95,7 +95,7 @@ function ContactSection() {
       setErrors(initialErrors);
     } catch (error) {
       setStatus('error');
-      setErrorMessage(error.message);
+      setErrorMessage(error?.message || 'Something went wrong while sending your message.');
     }
   };
 
