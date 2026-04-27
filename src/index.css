@@ -76,6 +76,7 @@ body::before {
 }
 
 @layer base {
+
   h1,
   h2,
   h3,
@@ -91,6 +92,10 @@ body::before {
 
   a {
     @apply text-inherit no-underline;
+  }
+
+  a:visited {
+    color: inherit;
   }
 }
 

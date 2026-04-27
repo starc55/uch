@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import MagneticButton from "../components/MagneticButton";
 import SectionHeading from "../components/SectionHeading";
 import TerminalField from "../components/TerminalField";
@@ -17,29 +18,37 @@ const initialErrors = {
   message: "",
 };
 
-function validateField(name, value) {
+function validateField(name, value, t, fieldLabel) {
   const trimmedValue = value.trim();
 
   if (!trimmedValue) {
-    return `${name.charAt(0).toUpperCase() + name.slice(1)} is required.`;
+    return t("contact.validation.required", {
+      field: fieldLabel,
+    });
   }
 
   if (name === "email") {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(trimmedValue)) {
-      return "Please enter a valid email address.";
+      return t("contact.validation.email");
     }
   }
 
   if (name === "message" && trimmedValue.length < 10) {
-    return "Message should be at least 10 characters.";
+    return t("contact.validation.messageMin");
   }
 
   return "";
 }
 
 function ContactSection() {
+  const { t } = useTranslation();
+  const fieldLabels = {
+    name: t("contact.labels.name"),
+    email: t("contact.labels.email"),
+    message: t("contact.labels.message"),
+  };
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState(initialErrors);
   const [status, setStatus] = useState("ready");
@@ -52,7 +61,9 @@ function ContactSection() {
     setFormData((current) => ({ ...current, [name]: value }));
     setErrors((current) => ({
       ...current,
-      [name]: value.trim() ? validateField(name, value) : "",
+      [name]: value.trim()
+        ? validateField(name, value, t, fieldLabels[name])
+        : "",
     }));
   };
 
@@ -60,7 +71,7 @@ function ContactSection() {
     const { name, value } = event.target;
     setErrors((current) => ({
       ...current,
-      [name]: validateField(name, value),
+      [name]: validateField(name, value, t, fieldLabels[name]),
     }));
   };
 
@@ -72,9 +83,19 @@ function ContactSection() {
       message: formData.message.trim(),
     };
     const nextErrors = {
-      name: validateField("name", trimmedFormData.name),
-      email: validateField("email", trimmedFormData.email),
-      message: validateField("message", trimmedFormData.message),
+      name: validateField("name", trimmedFormData.name, t, fieldLabels.name),
+      email: validateField(
+        "email",
+        trimmedFormData.email,
+        t,
+        fieldLabels.email
+      ),
+      message: validateField(
+        "message",
+        trimmedFormData.message,
+        t,
+        fieldLabels.message
+      ),
     };
 
     setErrors(nextErrors);
@@ -82,7 +103,7 @@ function ContactSection() {
 
     if (Object.values(nextErrors).some(Boolean)) {
       setStatus("error");
-      setErrorMessage("Please complete the required fields correctly.");
+      setErrorMessage(t("contact.messages.invalid"));
       return;
     }
 
@@ -95,27 +116,20 @@ function ContactSection() {
       setErrors(initialErrors);
     } catch (error) {
       setStatus("error");
-      setErrorMessage(
-        error?.message || "Something went wrong while sending your message."
-      );
+      setErrorMessage(error?.message || t("contact.messages.fallbackError"));
     }
   };
 
-  const statusText = {
-    ready: "Secure intake active",
-    sending: "Transmitting to Make",
-    sent: "Message delivered",
-    error: "Delivery failed",
-  }[status];
+  const statusText = t(`contact.statuses.${status}`);
 
   return (
     <section id="contact" className="relative">
       <div className="section-shell">
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
           <SectionHeading
-            eyebrow="Contact"
-            title="Bring the brief. We'll route it into the Make workflow."
-            description="A tighter intake flow for fast project requests. Each submission is sent into your Make automation webhook and can continue to Telegram from there."
+            eyebrow={t("contact.eyebrow")}
+            title={t("contact.title")}
+            description={t("contact.description")}
           />
 
           <motion.form
@@ -145,27 +159,33 @@ function ContactSection() {
             <div className="mb-5 grid gap-3 sm:grid-cols-3">
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3">
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                  Channel
+                  {t("contact.cards.channel")}
                 </p>
-                <p className="mt-2 text-sm text-white/70">Make Webhook</p>
+                <p className="mt-2 text-sm text-white/70">
+                  {t("contact.cards.channelValue")}
+                </p>
               </div>
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3">
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                  Format
+                  {t("contact.cards.format")}
                 </p>
-                <p className="mt-2 text-sm text-white/70">Name, email, brief</p>
+                <p className="mt-2 text-sm text-white/70">
+                  {t("contact.cards.formatValue")}
+                </p>
               </div>
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-3">
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                  Response
+                  {t("contact.cards.response")}
                 </p>
-                <p className="mt-2 text-sm text-white/70">Automation trigger</p>
+                <p className="mt-2 text-sm text-white/70">
+                  {t("contact.cards.responseValue")}
+                </p>
               </div>
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
               <TerminalField
-                label="Name"
+                label={t("contact.labels.name")}
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -174,7 +194,7 @@ function ContactSection() {
                 error={errors.name}
               />
               <TerminalField
-                label="Email"
+                label={t("contact.labels.email")}
                 name="email"
                 type="email"
                 value={formData.email}
@@ -184,7 +204,7 @@ function ContactSection() {
                 error={errors.email}
               />
               <TerminalField
-                label="Message"
+                label={t("contact.labels.message")}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
@@ -207,7 +227,7 @@ function ContactSection() {
                 )}
                 {status === "sent" && (
                   <p className="text-sm text-accent/84">
-                    Make workflow accepted the message.
+                    {t("contact.messages.success")}
                   </p>
                 )}
               </div>
@@ -218,7 +238,9 @@ function ContactSection() {
                 }
                 loading={status === "sending"}
               >
-                {status === "sending" ? "Sending brief" : "Transmit brief"}
+                {status === "sending"
+                  ? t("contact.messages.sending")
+                  : t("contact.messages.submit")}
               </MagneticButton>
             </div>
           </motion.form>

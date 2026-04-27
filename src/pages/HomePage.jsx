@@ -1,23 +1,25 @@
-import { useEffect, useRef, useState } from 'react';
-import FloatingCallButton from '../components/FloatingCallButton';
-import Navbar from '../components/Navbar';
-import useLocomotiveScroll from '../hooks/useLocomotiveScroll';
-import useMouseGlow from '../hooks/useMouseGlow';
-import CapabilitiesSection from '../sections/CapabilitiesSection';
-import ContactSection from '../sections/ContactSection';
-import CoreSection from '../sections/CoreSection';
-import FooterSection from '../sections/FooterSection';
-import HeroSection from '../sections/HeroSection';
-import PortfolioSection from '../sections/PortfolioSection';
-import ProcessSection from '../sections/ProcessSection';
+import { useEffect, useRef, useState } from "react";
+import FloatingCallButton from "../components/FloatingCallButton";
+import Navbar from "../components/Navbar";
+import useLocomotiveScroll from "../hooks/useLocomotiveScroll";
+import useMouseGlow from "../hooks/useMouseGlow";
+import CapabilitiesSection from "../sections/CapabilitiesSection";
+import ContactSection from "../sections/ContactSection";
+import CoreSection from "../sections/CoreSection";
+import FooterSection from "../sections/FooterSection";
+import HeroSection from "../sections/HeroSection";
+import PortfolioSection from "../sections/PortfolioSection";
+import ProcessSection from "../sections/ProcessSection";
 
 const navigationItems = [
-  { id: 'capabilities', label: 'Capabilities' },
-  { id: 'portfolio', label: 'Portfolio' },
-  { id: 'core', label: 'The Core' },
-  { id: 'process', label: 'Process' },
-  { id: 'contact', label: 'Contact' },
-];
+  "capabilities",
+  "portfolio",
+  "core",
+  "process",
+  "contact",
+].map((id) => ({
+  id,
+}));
 
 function HomePage() {
   const scrollContainerRef = useRef(null);
@@ -35,10 +37,10 @@ function HomePage() {
     };
 
     handleWindowScroll();
-    window.addEventListener('scroll', handleWindowScroll, { passive: true });
+    window.addEventListener("scroll", handleWindowScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleWindowScroll);
+      window.removeEventListener("scroll", handleWindowScroll);
     };
   }, [locomotiveScroll]);
 
@@ -51,13 +53,15 @@ function HomePage() {
       setScrolled(args.scroll.y > 28);
     };
 
-    locomotiveScroll.on('scroll', handleScroll);
-    handleScroll({ scroll: { y: locomotiveScroll.scroll?.instance?.scroll?.y ?? 0 } });
+    locomotiveScroll.on("scroll", handleScroll);
+    handleScroll({
+      scroll: { y: locomotiveScroll.scroll?.instance?.scroll?.y ?? 0 },
+    });
     window.requestAnimationFrame(() => locomotiveScroll.update());
 
     return () => {
-      if (typeof locomotiveScroll.off === 'function') {
-        locomotiveScroll.off('scroll', handleScroll);
+      if (typeof locomotiveScroll.off === "function") {
+        locomotiveScroll.off("scroll", handleScroll);
       }
     };
   }, [locomotiveScroll]);
@@ -71,7 +75,7 @@ function HomePage() {
 
     if (locomotiveScroll) {
       locomotiveScroll.scrollTo(element, {
-        offset: id === 'hero' ? 0 : -96,
+        offset: id === "hero" ? 0 : -96,
         duration: 950,
         disableLerp: false,
       });
@@ -79,12 +83,16 @@ function HomePage() {
       return;
     }
 
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <div className="page-shell">
-      <Navbar items={navigationItems} onNavigate={scrollTo} scrolled={scrolled} />
+      <Navbar
+        items={navigationItems}
+        onNavigate={scrollTo}
+        scrolled={scrolled}
+      />
       <FloatingCallButton />
 
       <div ref={scrollContainerRef} data-scroll-container>
@@ -92,8 +100,8 @@ function HomePage() {
           <div data-scroll-section>
             <HeroSection
               mousePosition={mousePosition}
-              onPrimaryClick={() => scrollTo('contact')}
-              onSecondaryClick={() => scrollTo('portfolio')}
+              onPrimaryClick={() => scrollTo("contact")}
+              onSecondaryClick={() => scrollTo("portfolio")}
             />
           </div>
           <div data-scroll-section>

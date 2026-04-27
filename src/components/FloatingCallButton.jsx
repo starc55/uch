@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
-import { siteConfig } from '../config/site';
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { siteConfig } from "../config/site";
 
 function FloatingCallButton() {
+  const { t } = useTranslation();
+
   return (
     <motion.a
       href={siteConfig.contactPhoneHref}
@@ -16,12 +19,12 @@ function FloatingCallButton() {
         <motion.span
           className="absolute inset-[-10px] rounded-full border border-accent/25"
           animate={{ scale: [1, 1.14, 1], opacity: [0.18, 0.5, 0.18] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.span
           className="absolute inset-[-20px] rounded-full border border-accent/12"
           animate={{ scale: [1, 1.22, 1], opacity: [0.08, 0.25, 0.08] }}
-          transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <motion.div
@@ -29,12 +32,12 @@ function FloatingCallButton() {
           animate={{
             y: [0, -6, 0],
             boxShadow: [
-              '0 20px 60px rgba(0,0,0,0.45)',
-              '0 22px 70px rgba(0,209,255,0.18)',
-              '0 20px 60px rgba(0,0,0,0.45)',
+              "0 20px 60px rgba(0,0,0,0.45)",
+              "0 22px 70px rgba(0,209,255,0.18)",
+              "0 20px 60px rgba(0,0,0,0.45)",
             ],
           }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         >
           <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_top,rgba(0,209,255,0.14),transparent_40%)] opacity-70" />
           <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/80 to-transparent opacity-80" />
@@ -42,7 +45,7 @@ function FloatingCallButton() {
           <motion.span
             className="relative ml-[3px] flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-accent/25 bg-accent/12 text-accent"
             animate={{ rotate: [0, -10, 0, 10, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           >
             <svg
               viewBox="0 0 24 24"
@@ -61,7 +64,7 @@ function FloatingCallButton() {
 
           <div className="pointer-events-none absolute left-[4.4rem] hidden min-w-[9.5rem] pr-4 opacity-0 transition-all duration-400 ease-out md:block md:translate-x-3 md:group-hover:translate-x-0 md:group-hover:opacity-100">
             <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-accent/80">
-              Call UCH
+              {t("phone.label")}
             </p>
             <p className="mt-1 whitespace-nowrap text-sm font-medium text-white/90">
               {siteConfig.contactPhoneDisplay}

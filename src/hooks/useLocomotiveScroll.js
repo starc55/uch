@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function useLocomotiveScroll(containerRef) {
   const [scrollInstance, setScrollInstance] = useState(null);
@@ -12,7 +12,7 @@ function useLocomotiveScroll(containerRef) {
     let locomotive;
 
     const initScroll = async () => {
-      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      const LocomotiveScroll = (await import("locomotive-scroll")).default;
 
       if (!containerRef.current || !isMounted) {
         return;
@@ -41,13 +41,13 @@ function useLocomotiveScroll(containerRef) {
       locomotive?.update();
     };
 
-    window.addEventListener('load', refresh);
-    window.addEventListener('resize', refresh);
+    window.addEventListener("load", refresh);
+    window.addEventListener("resize", refresh);
 
     return () => {
       isMounted = false;
-      window.removeEventListener('load', refresh);
-      window.removeEventListener('resize', refresh);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("resize", refresh);
       setScrollInstance(null);
       locomotive?.destroy();
     };

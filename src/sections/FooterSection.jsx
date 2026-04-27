@@ -1,14 +1,17 @@
-import { motion } from 'framer-motion';
-import logo from '../assets/logo.png';
-import SocialLink from '../components/SocialLink';
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import logo from "../assets/logo.png";
+import SocialLink from "../components/SocialLink";
 
 const socialLinks = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-  { label: 'GitHub', href: 'https://github.com/' },
-  { label: 'X', href: 'https://x.com/' },
+  { label: "LinkedIn", href: "https://www.linkedin.com/" },
+  { label: "GitHub", href: "https://github.com/" },
+  { label: "X", href: "https://x.com/" },
 ];
 
 function FooterSection() {
+  const { t } = useTranslation();
+
   return (
     <footer className="relative">
       <div className="section-shell pt-10">
@@ -17,7 +20,7 @@ function FooterSection() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,209,255,0.14),transparent_32%)]" />
           <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-accent/80 to-transparent" />
@@ -37,33 +40,38 @@ function FooterSection() {
               </div>
 
               <div className="max-w-2xl space-y-3">
-                <h3 className="text-3xl leading-tight sm:text-4xl">
-                  Systems that feel sharp before launch and stronger after it.
+                <h3 className="text-3xl leading-tight text-white sm:text-4xl">
+                  {t("footer.title")}
                 </h3>
-                <p className="max-w-xl text-sm leading-7 sm:text-base">
-                  Product thinking, interface engineering, automation, and delivery discipline in
-                  one compact team.
+                <p className="max-w-xl text-sm leading-7 text-white/64 sm:text-base">
+                  {t("footer.description")}
                 </p>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
                 <div className="rounded-[1.5rem] border border-white/10 bg-black/20 px-4 py-4">
                   <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                    Build Mode
+                    {t("footer.cards.buildMode")}
                   </p>
-                  <p className="mt-2 text-sm text-white/70">Concept to launch</p>
+                  <p className="mt-2 text-sm text-white/70">
+                    {t("footer.cards.buildModeValue")}
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/10 bg-black/20 px-4 py-4">
                   <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                    Delivery
+                    {t("footer.cards.delivery")}
                   </p>
-                  <p className="mt-2 text-sm text-white/70">Web, mobile, AI</p>
+                  <p className="mt-2 text-sm text-white/70">
+                    {t("footer.cards.deliveryValue")}
+                  </p>
                 </div>
                 <div className="rounded-[1.5rem] border border-white/10 bg-black/20 px-4 py-4">
                   <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                    Quality
+                    {t("footer.cards.quality")}
                   </p>
-                  <p className="mt-2 text-sm text-white/70">Minimal but powerful</p>
+                  <p className="mt-2 text-sm text-white/70">
+                    {t("footer.cards.qualityValue")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -71,17 +79,17 @@ function FooterSection() {
             <div className="flex flex-col justify-between gap-8">
               <div className="rounded-[1.75rem] border border-accent/18 bg-accent/8 p-5">
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
-                  Contact Channel
+                  {t("footer.contactChannel")}
                 </p>
                 <p className="mt-3 text-xl text-white">hello@uch.dev</p>
                 <p className="mt-2 text-sm leading-7 text-white/58">
-                  Ready for product builds, redesigns, and automation systems.
+                  {t("footer.contactDescription")}
                 </p>
               </div>
 
               <div className="space-y-4">
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/44">
-                  Social Links
+                  {t("footer.socialLinks")}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {socialLinks.map((link) => (
@@ -93,8 +101,10 @@ function FooterSection() {
           </div>
 
           <div className="relative mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
-            <p>Designed for ambitious digital systems.</p>
-            <p className="font-mono uppercase tracking-[0.26em] text-accent/80">Powered by UCH</p>
+            <p className="text-white/45">{t("footer.note")}</p>
+            <p className="font-mono uppercase tracking-[0.26em] text-accent/80">
+              {t("footer.poweredBy")}
+            </p>
           </div>
         </motion.div>
       </div>

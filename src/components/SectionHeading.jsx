@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 function SectionHeading({ eyebrow, title, description }) {
   return (
@@ -7,7 +7,7 @@ function SectionHeading({ eyebrow, title, description }) {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.35 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <span className="eyebrow">{eyebrow}</span>
       <h2 className="section-title text-balance">{title}</h2>

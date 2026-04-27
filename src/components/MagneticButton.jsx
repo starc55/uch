@@ -1,11 +1,11 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 function MagneticButton({
   children,
-  className = '',
+  className = "",
   onClick,
-  type = 'button',
+  type = "button",
   loading = false,
 }) {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -28,12 +28,14 @@ function MagneticButton({
   return (
     <motion.button
       type={type}
-      className={`group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-accent/30 bg-accent px-6 py-3 text-sm font-medium text-base transition-colors hover:border-accent/60 ${loading ? 'cursor-wait' : ''} ${className}`}
+      className={`group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-accent/30 bg-accent px-6 py-3 text-sm font-medium text-base transition-colors hover:border-accent/60 ${
+        loading ? "cursor-wait" : ""
+      } ${className}`}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       onClick={onClick}
       animate={offset}
-      transition={{ type: 'spring', stiffness: 220, damping: 16, mass: 0.8 }}
+      transition={{ type: "spring", stiffness: 220, damping: 16, mass: 0.8 }}
       whileTap={{ scale: 0.98 }}
     >
       <span className="absolute inset-0 bg-gradient-to-r from-accent via-white to-accent opacity-0 transition-opacity duration-500 group-hover:opacity-20" />
@@ -49,7 +51,7 @@ function MagneticButton({
                   duration: 0.8,
                   delay: index * 0.1,
                   repeat: Infinity,
-                  ease: 'easeInOut',
+                  ease: "easeInOut",
                 }}
               />
             ))}
@@ -62,7 +64,7 @@ function MagneticButton({
           className="relative text-base"
           initial={false}
           animate={{ x: offset.x * 0.25 }}
-          transition={{ type: 'spring', stiffness: 200, damping: 16 }}
+          transition={{ type: "spring", stiffness: 200, damping: 16 }}
         >
           ↗
         </motion.span>

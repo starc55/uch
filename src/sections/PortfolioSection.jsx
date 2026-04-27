@@ -1,25 +1,31 @@
-import PortfolioCard from '../components/PortfolioCard';
-import SectionHeading from '../components/SectionHeading';
-import works from '../data/works.json';
+import { useTranslation } from "react-i18next";
+import PortfolioCard from "../components/PortfolioCard";
+import SectionHeading from "../components/SectionHeading";
+import works from "../data/works.json";
 
 function PortfolioSection() {
+  const { t } = useTranslation();
+
+  const localizedWorks = works.map((project) => ({
+    ...project,
+    name: t(`portfolio.items.${project.id}.name`),
+    category: t(`portfolio.items.${project.id}.category`),
+    description: t(`portfolio.items.${project.id}.description`),
+  }));
+
   return (
     <section id="portfolio" className="relative">
       <div className="section-shell">
         <div className="space-y-12">
           <SectionHeading
-            eyebrow="Selected Systems"
-            title="Work designed to stay clean as the portfolio grows."
-            description="Each project now comes from a dedicated JSON source, while the card layout stays tighter, more balanced, and easier to scan across desktop and mobile."
+            eyebrow={t("portfolio.eyebrow")}
+            title={t("portfolio.title")}
+            description={t("portfolio.description")}
           />
 
-          <div className="grid gap-5 lg:grid-cols-12">
-            {works.map((project) => (
-              <PortfolioCard
-                key={project.id}
-                project={project}
-                className={project.layout}
-              />
+          <div className="grid gap-6 lg:grid-cols-2">
+            {localizedWorks.map((project) => (
+              <PortfolioCard key={project.id} project={project} />
             ))}
           </div>
         </div>

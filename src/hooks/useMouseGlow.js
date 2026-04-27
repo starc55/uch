@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const defaultPosition = { x: 0.74, y: 0.26 };
 
@@ -13,10 +13,12 @@ function useMouseGlow() {
       });
     };
 
-    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    window.addEventListener("pointermove", handlePointerMove, {
+      passive: true,
+    });
 
     return () => {
-      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener("pointermove", handlePointerMove);
     };
   }, []);
 
