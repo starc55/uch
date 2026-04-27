@@ -7,8 +7,8 @@ function escapeHtml(value) {
 }
 
 export async function sendTelegramMessage({ name, email, message }) {
-  const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-  const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+  const botToken = import.meta.env.TELEGRAM_BOT_TOKEN;
+  const chatId = import.meta.env.TELEGRAM_CHAT_ID;
 
   if (!botToken || !chatId) {
     throw new Error('Telegram bot sozlanmagan. .env faylga token va chat ID kiriting.');
