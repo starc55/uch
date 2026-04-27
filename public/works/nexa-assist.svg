@@ -1,0 +1,25 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" rx="40" fill="#060B0F"/>
+  <rect x="56" y="56" width="1488" height="888" rx="34" fill="url(#bg)"/>
+  <circle cx="800" cy="496" r="230" fill="rgba(0,209,255,0.08)" stroke="rgba(0,209,255,0.24)" stroke-width="12"/>
+  <circle cx="800" cy="496" r="148" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="12"/>
+  <circle cx="800" cy="496" r="68" fill="#00D1FF" fill-opacity="0.85"/>
+  <path d="M800 196V116" stroke="#00D1FF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M800 876V796" stroke="#00D1FF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M500 496H420" stroke="#00D1FF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1180 496H1100" stroke="#00D1FF" stroke-width="12" stroke-linecap="round"/>
+  <path d="M588 284L528 224" stroke="white" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1072 768L1012 708" stroke="white" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1012 284L1072 224" stroke="white" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M528 768L588 708" stroke="white" stroke-opacity="0.5" stroke-width="12" stroke-linecap="round"/>
+  <rect x="116" y="116" width="360" height="172" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="1124" y="116" width="360" height="172" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="116" y="712" width="360" height="172" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+  <rect x="1124" y="712" width="360" height="172" rx="28" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)"/>
+  <defs>
+    <linearGradient id="bg" x1="80" y1="80" x2="1480" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091118"/>
+      <stop offset="1" stop-color="#082231"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "atlas-control-layer",
+    "name": "Atlas Control Layer",
+    "category": "Enterprise Ops",
+    "description": "Operations command center for telemetry, approvals, and incident response in one premium control surface.",
+    "asset": "/works/atlas-control-layer.svg",
+    "liveUrl": "https://atlas-control-layer.example.com",
+    "repoUrl": "https://github.com/uch/atlas-control-layer",
+    "stack": ["React", "Node", "Framer Motion", "GraphQL"],
+    "year": "2026",
+    "layout": "lg:col-span-7 lg:min-h-[30rem]"
+  },
+  {
+    "id": "pulse-commerce-os",
+    "name": "Pulse Commerce OS",
+    "category": "Commerce System",
+    "description": "Storefront and admin ecosystem where content, analytics, and automation move as a single product system.",
+    "asset": "/works/pulse-commerce-os.svg",
+    "liveUrl": "https://pulse-commerce.example.com",
+    "repoUrl": "https://github.com/uch/pulse-commerce-os",
+    "stack": ["Vite", "Tailwind", "Stripe", "Supabase"],
+    "year": "2025",
+    "layout": "lg:col-span-5 lg:min-h-[24rem]"
+  },
+  {
+    "id": "nexa-assist",
+    "name": "Nexa Assist",
+    "category": "AI Automation",
+    "description": "AI-guided workflow assistant that turns repetitive operations into clear, traceable automations.",
+    "asset": "/works/nexa-assist.svg",
+    "liveUrl": "https://nexa-assist.example.com",
+    "repoUrl": "https://github.com/uch/nexa-assist",
+    "stack": ["OpenAI", "React", "Python", "Workers"],
+    "year": "2026",
+    "layout": "lg:col-span-5 lg:min-h-[24rem]"
+  },
+  {
+    "id": "circuit-mobile",
+    "name": "Circuit Mobile",
+    "category": "Mobile Platform",
+    "description": "Offline-first field app with fast sync, crisp interactions, and a shared design language with desktop.",
+    "asset": "/works/circuit-mobile.svg",
+    "liveUrl": "https://circuit-mobile.example.com",
+    "repoUrl": "https://github.com/uch/circuit-mobile",
+    "stack": ["React Native", "Expo", "Realtime Sync", "Design Tokens"],
+    "year": "2025",
+    "layout": "lg:col-span-7 lg:min-h-[28rem]"
+  }
+]
