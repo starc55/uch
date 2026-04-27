@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import FloatingCallButton from '../components/FloatingCallButton';
 import Navbar from '../components/Navbar';
 import useLocomotiveScroll from '../hooks/useLocomotiveScroll';
 import useMouseGlow from '../hooks/useMouseGlow';
@@ -84,6 +85,7 @@ function HomePage() {
   return (
     <div className="page-shell">
       <Navbar items={navigationItems} onNavigate={scrollTo} scrolled={scrolled} />
+      <FloatingCallButton />
 
       <div ref={scrollContainerRef} data-scroll-container>
         <main>

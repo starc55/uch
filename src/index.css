@@ -27,6 +27,10 @@ body {
   color: #ffffff;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 html.has-scroll-smooth {
   overflow: hidden;
 }

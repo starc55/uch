@@ -1,23 +1,22 @@
-export async function sendTelegramMessage(payload) {
-  const response = await fetch('/api/contact', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
+const MAKE_WEBHOOK_URL =
+  "https://hook.eu2.make.com/9nfq32pvj4vfc444dvjqm25rf0s32uc8";
 
-  let result = null;
-
+export async function sendTelegramMessage(data) {
   try {
-    result = await response.json();
-  } catch {
-    result = null;
-  }
+    const res = await fetch(MAKE_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-  if (!response.ok) {
-    throw new Error(result?.error || 'Telegramga yuborishda xatolik yuz berdi.');
-  }
+    if (!res.ok) {
+      throw new Error("Make webhook error");
+    }
 
-  return result;
+    return await res.text();
+  } catch (err) {
+    throw new Error("Xabar yuborilmadi");
+  }
 }
