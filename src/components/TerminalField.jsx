@@ -3,12 +3,14 @@ function TerminalField({
   name,
   type = "text",
   value,
+  placeholder,
   onChange,
   onBlur,
   multiline = false,
   rows = 5,
   className = "",
   required = false,
+  hint = "",
   error = "",
 }) {
   const commonProps = {
@@ -20,7 +22,7 @@ function TerminalField({
     "aria-invalid": Boolean(error),
     className:
       "w-full bg-transparent text-sm text-white outline-none placeholder:text-white/28",
-    placeholder: `${label.toLowerCase()}...`,
+    placeholder: placeholder ?? `${label.toLowerCase()}...`,
   };
 
   return (
@@ -40,6 +42,7 @@ function TerminalField({
       ) : (
         <input type={type} {...commonProps} />
       )}
+      {hint && <p className="text-xs leading-5 text-white/40">{hint}</p>}
       {error && <p className="text-xs text-[#ff8f8f]">{error}</p>}
     </label>
   );

@@ -9,19 +9,28 @@ import { sendTelegramMessage } from "../lib/sendTelegramMessage";
 const initialState = {
   name: "",
   email: "",
+  phone: "",
+  socialLink: "",
   message: "",
 };
 
 const initialErrors = {
   name: "",
   email: "",
+  phone: "",
+  socialLink: "",
   message: "",
 };
 
 function validateField(name, value, t, fieldLabel) {
   const trimmedValue = value.trim();
+  const requiredFields = ["name", "email", "phone", "message"];
 
   if (!trimmedValue) {
+    if (!requiredFields.includes(name)) {
+      return "";
+    }
+
     return t("contact.validation.required", {
       field: fieldLabel,
     });
@@ -32,6 +41,14 @@ function validateField(name, value, t, fieldLabel) {
 
     if (!emailPattern.test(trimmedValue)) {
       return t("contact.validation.email");
+    }
+  }
+
+  if (name === "phone") {
+    const phonePattern = /^[+]?[0-9\s()-]{7,}$/;
+
+    if (!phonePattern.test(trimmedValue)) {
+      return t("contact.validation.phone");
     }
   }
 
@@ -47,6 +64,8 @@ function ContactSection() {
   const fieldLabels = {
     name: t("contact.labels.name"),
     email: t("contact.labels.email"),
+    phone: t("contact.labels.phone"),
+    socialLink: t("contact.labels.social"),
     message: t("contact.labels.message"),
   };
   const [formData, setFormData] = useState(initialState);
@@ -80,6 +99,8 @@ function ContactSection() {
     const trimmedFormData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      socialLink: formData.socialLink.trim(),
       message: formData.message.trim(),
     };
     const nextErrors = {
@@ -89,6 +110,18 @@ function ContactSection() {
         trimmedFormData.email,
         t,
         fieldLabels.email
+      ),
+      phone: validateField(
+        "phone",
+        trimmedFormData.phone,
+        t,
+        fieldLabels.phone
+      ),
+      socialLink: validateField(
+        "socialLink",
+        trimmedFormData.socialLink,
+        t,
+        fieldLabels.socialLink
       ),
       message: validateField(
         "message",
@@ -148,7 +181,7 @@ function ContactSection() {
                 <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
                 <p className="ml-3 font-mono text-[11px] uppercase tracking-[0.3em] text-white/42">
-                  contact://make
+                  contact://request-desk
                 </p>
               </div>
               <div className="rounded-full border border-accent/15 bg-accent/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.22em] text-accent/78">
@@ -202,6 +235,26 @@ function ContactSection() {
                 onBlur={handleBlur}
                 required
                 error={errors.email}
+              />
+              <TerminalField
+                label={t("contact.labels.phone")}
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                required
+                error={errors.phone}
+              />
+              <TerminalField
+                label={t("contact.labels.social")}
+                name="socialLink"
+                value={formData.socialLink}
+                placeholder={t("contact.placeholders.social")}
+                hint={t("contact.hints.social")}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.socialLink}
               />
               <TerminalField
                 label={t("contact.labels.message")}

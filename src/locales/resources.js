@@ -28,7 +28,7 @@ export const resources = {
         secondary: "View selected systems",
         stats: [
           { value: "04", label: "Specialists in the core" },
-          { value: "12+", label: "Products shipped end-to-end" },
+          { value: "20+", label: "Products shipped end-to-end" },
           { value: "99%", label: "Intentional over feature clutter" },
         ],
         signal: "Signal",
@@ -200,45 +200,54 @@ export const resources = {
       },
       contact: {
         eyebrow: "Contact",
-        title: "Bring the brief. We'll route it into the Make workflow.",
+        title: "Share your project brief. The UCH team will get in touch.",
         description:
-          "A tighter intake flow for fast project requests. Each submission is sent into your Make automation webhook and can continue to Telegram from there.",
+          "This form is designed to collect the initial details of your request. Each submission is delivered to our internal intake flow for review by the appropriate specialist.",
         statuses: {
-          ready: "Secure intake active",
-          sending: "Transmitting to Make",
-          sent: "Message delivered",
-          error: "Delivery failed",
+          ready: "Intake open",
+          sending: "Submitting request",
+          sent: "Request received",
+          error: "Submission failed",
         },
         cards: {
           channel: "Channel",
-          channelValue: "Make Webhook",
+          channelValue: "UCH intake desk",
           format: "Format",
-          formatValue: "Name, email, brief",
+          formatValue: "Name, contact, project brief",
           response: "Response",
-          responseValue: "Automation trigger",
+          responseValue: "Within 1 business day",
         },
         labels: {
           name: "Name",
           email: "Email",
+          phone: "Phone",
+          social: "Social profile link",
           message: "Message",
+        },
+        placeholders: {
+          social: "https://linkedin.com/in/username",
+        },
+        hints: {
+          social:
+            "You may leave a LinkedIn, Instagram, Telegram, GitHub, or another relevant profile link.",
         },
         messages: {
           invalid: "Please complete the required fields correctly.",
-          success: "Make workflow accepted the message.",
+          success:
+            "Your request has been received. The UCH team will contact you shortly.",
           fallbackError: "Something went wrong while sending your message.",
-          submit: "Transmit brief",
-          sending: "Sending brief",
+          submit: "Submit request",
+          sending: "Submitting request",
         },
         validation: {
           required: "{{field}} is required.",
           email: "Please enter a valid email address.",
+          phone: "Please enter a valid phone number.",
           messageMin: "Message should be at least 10 characters.",
         },
       },
       footer: {
         title: "Systems that feel sharp before launch and stronger after it.",
-        description:
-          "Product thinking, interface engineering, automation, and delivery discipline in one compact team.",
         cards: {
           buildMode: "Build Mode",
           buildModeValue: "Concept to launch",
@@ -283,7 +292,7 @@ export const resources = {
         start: "Loyihani boshlash",
         startShort: "Boshlash",
         mobileTitle: "Navigatsiya",
-        mobileDescription: "UCH tizimini ko‘rib chiqing",
+        mobileDescription: "UCH yo‘nalishlari va xizmatlari bilan tanishing",
         languages: {
           uz: "UZ",
           ru: "RU",
@@ -291,36 +300,40 @@ export const resources = {
         },
       },
       hero: {
-        eyebrow: "Premium engineering collective",
-        title: "Biz shunchaki kod emas, tizimlar quramiz.",
+        eyebrow: "Raqamli mahsulotlar bo‘yicha muhandislik jamoasi",
+        title:
+          "Biz UCH uchun ishonchli va barqaror raqamli tizimlar yaratamiz.",
         description:
-          "UCH yuqori darajadagi raqamli mahsulotlarni product studio aniqligi va systems team intizomi bilan yaratadi.",
+          "UCH biznes maqsadlari, foydalanuvchi tajribasi va texnik barqarorlikni uyg‘unlashtirgan zamonaviy raqamli mahsulotlarni ishlab chiqadi.",
         primary: "Loyihani boshlash",
-        secondary: "Tanlangan ishlarni ko‘rish",
+        secondary: "Tanlangan loyihalarni ko‘rish",
         stats: [
-          { value: "04", label: "Yadrodagi mutaxassislar" },
-          { value: "12+", label: "To‘liq yetkazilgan mahsulotlar" },
-          { value: "99%", label: "Ortiqcha emas, maqsadli yechimlar" },
+          { value: "04", label: "Asosiy jamoa mutaxassislari" },
+          { value: "20+", label: "To‘liq ishga tushirilgan mahsulotlar" },
+          {
+            value: "99%",
+            label: "Sifat va aniqlikka yo‘naltirilgan yondashuv",
+          },
         ],
         signal: "Signal",
-        signalValue: "Yagona delivery stack",
+        signalValue: "Yagona yetkazib berish modeli",
         pillars: [
           {
             title: "Arxitektura",
-            copy: "Design systemlar, infratuzilma fikrlashi va performance budgetlar",
+            copy: "Axborot arxitekturasi, dizayn tizimlari va samaradorlik mezonlari",
           },
           {
             title: "Ijro",
-            copy: "Platformalar bo‘ylab product darajasidagi tez iteratsiyalar",
+            copy: "Veb va mobil platformalarda tezkor, puxta va izchil amalga oshirish",
           },
           {
             title: "Avtomatlashtirish",
-            copy: "Mahsulot ichiga singdirilgan workflow intelligence",
+            copy: "Jarayonlarni soddalashtiruvchi aqlli integratsiyalar va ish oqimlari",
           },
         ],
         mode: "Ishlash rejimi",
-        modeLeft: "G‘oyadan launchgacha",
-        modeRight: "End-to-end",
+        modeLeft: "Tahlildan ishga tushirishgacha",
+        modeRight: "Kompleks yechim",
       },
       capabilities: {
         eyebrow: "Imkoniyatlar",
@@ -471,69 +484,79 @@ export const resources = {
       },
       contact: {
         eyebrow: "Aloqa",
-        title: "Briefni yuboring. Uni Make workflow ichiga yo‘naltiramiz.",
+        title:
+          "Loyihangiz haqida ma’lumot qoldiring. UCH jamoasi siz bilan bog‘lanadi.",
         description:
-          "Tez project intake uchun ixcham flow. Har bir yuborilgan so‘rov Make automation webhook’iga tushadi va u yerdan Telegramga davom etishi mumkin.",
+          "Mazkur forma loyihangiz bo‘yicha dastlabki ma’lumotni qabul qilish uchun mo‘ljallangan. So‘rovingiz ichki murojaatlar oqimiga yuboriladi va mas’ul mutaxassis tomonidan ko‘rib chiqiladi.",
         statuses: {
-          ready: "Xavfsiz intake faol",
-          sending: "Make’ga yuborilmoqda",
-          sent: "Xabar yetkazildi",
-          error: "Yuborishda xatolik",
+          ready: "Murojaatlar qabul qilinmoqda",
+          sending: "So‘rov yuborilmoqda",
+          sent: "So‘rov qabul qilindi",
+          error: "Yuborishda xatolik yuz berdi",
         },
         cards: {
           channel: "Kanal",
-          channelValue: "Make Webhook",
+          channelValue: "UCH murojaatlar bo‘limi",
           format: "Format",
-          formatValue: "Ism, email, brief",
+          formatValue: "Ism, aloqa va loyiha tafsiloti",
           response: "Javob",
-          responseValue: "Automation trigger",
+          responseValue: "1 ish kuni ichida",
         },
         labels: {
           name: "Ism",
           email: "Email",
+          phone: "Telefon",
+          social: "Ijtimoiy tarmoq havolasi",
           message: "Xabar",
+        },
+        placeholders: {
+          social: "https://linkedin.com/in/username",
+        },
+        hints: {
+          social:
+            "LinkedIn, Instagram, Telegram, GitHub yoki boshqa profilingiz havolasini qoldirishingiz mumkin.",
         },
         messages: {
           invalid: "Iltimos, kerakli maydonlarni to‘g‘ri to‘ldiring.",
-          success: "Make workflow xabarni qabul qildi.",
+          success:
+            "So‘rovingiz qabul qilindi. UCH jamoasi siz bilan tez orada bog‘lanadi.",
           fallbackError: "Xabarni yuborishda xatolik yuz berdi.",
-          submit: "Briefni yuborish",
-          sending: "Brief yuborilmoqda",
+          submit: "So‘rov yuborish",
+          sending: "So‘rov yuborilmoqda",
         },
         validation: {
           required: "{{field}} kiritilishi shart.",
           email: "Iltimos, to‘g‘ri email kiriting.",
+          phone: "Iltimos, to‘g‘ri telefon raqamini kiriting.",
           messageMin: "Xabar kamida 10 ta belgidan iborat bo‘lishi kerak.",
         },
       },
       footer: {
         title:
-          "Launchdan oldin o‘tkir, launchdan keyin esa yanada kuchli tizimlar.",
-        description:
-          "Product thinking, interface engineering, automation va delivery intizomi bitta kompakt jamoada.",
+          "UCH ehtiyojlariga mos, ishonchli va zamonaviy raqamli tizimlar.",
         cards: {
-          buildMode: "Build Mode",
-          buildModeValue: "G‘oyadan launchgacha",
-          delivery: "Delivery",
+          buildMode: "Hamkorlik formati",
+          buildModeValue: "Tahlildan ishga tushirishgacha",
+          delivery: "Yo‘nalishlar",
           deliveryValue: "Web, mobile, AI",
-          quality: "Quality",
-          qualityValue: "Minimal, lekin kuchli",
+          quality: "Yondashuv",
+          qualityValue: "Aniq, ixcham va samarali",
         },
         contactChannel: "Aloqa kanali",
         contactDescription:
-          "Product build, redesign va automation tizimlari uchun tayyormiz.",
+          "Yangi mahsulotlar, yangilanishlar va avtomatlashtirish yechimlari bo‘yicha hamkorlikka tayyormiz.",
         socialLinks: "Ijtimoiy tarmoqlar",
-        note: "Katta ambitsiyali raqamli tizimlar uchun yaratilgan.",
+        note: "UCH uchun ishonchli raqamli tajribalar yaratamiz.",
         poweredBy: "Powered by UCH",
       },
       loader: {
         brand: "Unified Coders Hub",
-        title: "Premium build environment ishga tushirilmoqda.",
+        title: "UCH ish muhiti ishga tushirilmoqda.",
         description:
-          "Interfeys qatlamlari, motion surface’lar va system signal’lari sinxronlanmoqda.",
+          "Interfeys qatlamlari, tizim signallari va asosiy komponentlar sinxronlanmoqda.",
       },
       phone: {
-        label: "UCH'ga qo‘ng‘iroq",
+        label: "UCH bilan bog‘lanish",
       },
       common: {
         english: "Inglizcha",
@@ -571,7 +594,7 @@ export const resources = {
         secondary: "Смотреть работы",
         stats: [
           { value: "04", label: "Специалиста в ядре" },
-          { value: "12+", label: "Продуктов, доведенных до релиза" },
+          { value: "20+", label: "Продуктов, доведенных до релиза" },
           { value: "99%", label: "Осознанные решения без лишнего" },
         ],
         signal: "Signal",
@@ -745,46 +768,55 @@ export const resources = {
       },
       contact: {
         eyebrow: "Контакт",
-        title: "Отправьте brief. Мы направим его в Make workflow.",
+        title: "Оставьте информацию о проекте. Команда UCH свяжется с вами.",
         description:
-          "Компактный intake flow для быстрых project request. Каждая отправка попадает в Make automation webhook и может дальше уйти в Telegram.",
+          "Эта форма предназначена для приема первичных данных по вашему запросу. Каждое обращение направляется во внутренний поток обработки и рассматривается профильным специалистом.",
         statuses: {
-          ready: "Secure intake active",
-          sending: "Передача в Make",
-          sent: "Сообщение доставлено",
-          error: "Ошибка доставки",
+          ready: "Прием обращений открыт",
+          sending: "Отправка запроса",
+          sent: "Запрос получен",
+          error: "Ошибка отправки",
         },
         cards: {
           channel: "Канал",
-          channelValue: "Make Webhook",
+          channelValue: "Отдел обращений UCH",
           format: "Формат",
-          formatValue: "Имя, email, brief",
+          formatValue: "Имя, контакты и описание проекта",
           response: "Ответ",
-          responseValue: "Automation trigger",
+          responseValue: "В течение 1 рабочего дня",
         },
         labels: {
           name: "Имя",
           email: "Email",
+          phone: "Телефон",
+          social: "Ссылка на социальный профиль",
           message: "Сообщение",
+        },
+        placeholders: {
+          social: "https://linkedin.com/in/username",
+        },
+        hints: {
+          social:
+            "Можно оставить ссылку на LinkedIn, Instagram, Telegram, GitHub или другой релевантный профиль.",
         },
         messages: {
           invalid: "Пожалуйста, корректно заполните обязательные поля.",
-          success: "Make workflow принял сообщение.",
+          success:
+            "Ваш запрос получен. Команда UCH свяжется с вами в ближайшее время.",
           fallbackError: "Произошла ошибка при отправке сообщения.",
-          submit: "Отправить brief",
-          sending: "Отправка brief",
+          submit: "Отправить запрос",
+          sending: "Отправка запроса",
         },
         validation: {
           required: "{{field}} обязательно.",
           email: "Пожалуйста, введите корректный email.",
+          phone: "Пожалуйста, введите корректный номер телефона.",
           messageMin: "Сообщение должно содержать минимум 10 символов.",
         },
       },
       footer: {
         title:
           "Системы, которые выглядят сильными до релиза и становятся еще лучше после него.",
-        description:
-          "Product thinking, interface engineering, automation и delivery discipline в одной компактной команде.",
         cards: {
           buildMode: "Build Mode",
           buildModeValue: "От идеи до запуска",

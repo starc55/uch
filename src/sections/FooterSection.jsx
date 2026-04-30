@@ -4,9 +4,9 @@ import logo from "../assets/logo.png";
 import SocialLink from "../components/SocialLink";
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "GitHub", href: "https://github.com/" },
-  { label: "X", href: "https://x.com/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/uchdev" },
+  { label: "Telegram", href: "https://t.me/uchcompany" },
+  { label: "Instagram", href: "https://www.instagram.com/uchdev.official?igsh=YWVsdXdieTZnMDM4" },
 ];
 
 function FooterSection() {
@@ -81,7 +81,7 @@ function FooterSection() {
                 <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-accent/82">
                   {t("footer.contactChannel")}
                 </p>
-                <p className="mt-3 text-xl text-white">hello@uch.dev</p>
+                <p className="mt-3 text-xl text-white">orziyevogabek67@ gmail.com</p>
                 <p className="mt-2 text-sm leading-7 text-white/58">
                   {t("footer.contactDescription")}
                 </p>

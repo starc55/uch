@@ -20,7 +20,7 @@ function TimelineStep({ step, index }) {
           </p>
         </div>
       </div>
-      <p className="text-sm leading-7 text-white/62">{step.description}</p>
+      <p className="text-[14px] leading-7 text-white/62">{step.description}</p>
     </motion.div>
   );
 }
