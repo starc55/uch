@@ -4,7 +4,7 @@ export const resources = {
       nav: {
         items: {
           capabilities: "Capabilities",
-          portfolio: "Portfolio",
+          portfolio: "Projects",
           core: "The Core",
           process: "Process",
           contact: "Contact",
@@ -103,29 +103,17 @@ export const resources = {
         managedFrom: "Managed from works.json",
         technologies: "{{count}} technologies",
         items: {
-          "atlas-control-layer": {
-            name: "Atlas Control Layer",
-            category: "Enterprise Ops",
+          market: {
+            name: "Market",
+            category: "Consumer",
             description:
-              "Operations command center for telemetry, approvals, and incident response in one premium control surface.",
+              "A modern marketplace for buying and selling unique products, connecting buyers and sellers in a seamless online experience.",
           },
-          "pulse-commerce-os": {
-            name: "Pulse Commerce OS",
-            category: "Commerce System",
+          barber: {
+            name: "Barber Shop",
+            category: "Service",
             description:
-              "Storefront and admin ecosystem where content, analytics, and automation move as a single product system.",
-          },
-          "nexa-assist": {
-            name: "Nexa Assist",
-            category: "AI Automation",
-            description:
-              "AI-guided workflow assistant that turns repetitive operations into clear, traceable automations.",
-          },
-          "circuit-mobile": {
-            name: "Circuit Mobile",
-            category: "Mobile Platform",
-            description:
-              "Offline-first field app with fast sync, crisp interactions, and a shared design language with desktop.",
+              "A stylish and modern barber shop offering a range of grooming services, including haircuts, shaves, and beard trims, in a comfortable and welcoming environment.",
           },
         },
       },

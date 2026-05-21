@@ -31,7 +31,7 @@ function PortfolioCard({ project }) {
           <img
             src={project.asset}
             alt={project.name}
-            className="h-56 w-full object-cover object-center transition duration-700 group-hover:scale-[1.03] sm:h-64 xl:h-full"
+            className="h-56 w-full object-contain object-center transition duration-700 group-hover:scale-[1.03] sm:h-64 xl:h-72"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#05070a] via-transparent to-transparent" />
           <div className="absolute inset-x-5 top-5 flex items-center justify-between gap-3">
@@ -116,9 +116,6 @@ function PortfolioCard({ project }) {
           <div className="space-y-4">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             <div className="flex items-center justify-between gap-4">
-              <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/42">
-                {t("portfolio.managedFrom")}
-              </p>
               <p className="text-sm text-white/52">
                 {t("portfolio.technologies", { count: project.stack.length })}
               </p>

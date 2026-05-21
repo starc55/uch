@@ -35,7 +35,7 @@ function HeroSection({ mousePosition, onPrimaryClick, onSecondaryClick }) {
             >
               <div className="space-y-6">
                 <span className="eyebrow">{t("hero.eyebrow")}</span>
-                <h1 className="max-w-4xl text-balance text-5xl leading-[0.9] sm:text-6xl lg:text-8xl">
+                <h1 className="max-w-4xl text-balance text-5xl leading-[0.9] sm:text-6xl lg:text-6xl">
                   {t("hero.title")}
                 </h1>
                 <p className="max-w-2xl text-lg leading-8 text-white/66 sm:text-xl">
