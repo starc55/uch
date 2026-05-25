@@ -6,6 +6,7 @@ export const resources = {
           capabilities: "Capabilities",
           portfolio: "Projects",
           core: "The Core",
+          developers: "Developers",
           process: "Process",
           contact: "Contact",
         },
@@ -115,6 +116,12 @@ export const resources = {
             description:
               "A stylish and modern barber shop offering a range of grooming services, including haircuts, shaves, and beard trims, in a comfortable and welcoming environment.",
           },
+          blog: {
+            name: "Crypto Platform",
+            category: "Crypto Service",
+            description:
+              "A comprehensive crypto platform with real-time market data, portfolio management tools, and educational resources for confident cryptocurrency navigation.",
+          },
         },
       },
       core: {
@@ -148,6 +155,76 @@ export const resources = {
             copy: "Keeps performance, structure, and deployment stable.",
           },
         },
+      },
+      developers: {
+        eyebrow: "Developers",
+        title: "Meet the developers behind the products in the UCH portfolio.",
+        description:
+          "Team profiles show practical portfolio experience and the technology stack visible in shipped UCH work.",
+        roster: "Team profiles",
+        rosterTitle: "Developer information backed by the current portfolio.",
+        verified: "Team member",
+        experience: "Portfolio experience",
+        projects: "Projects",
+        skills: "Skills",
+        socials: "Personal profiles",
+        members: [
+          {
+            initials: "OO",
+            name: "Og'abek Orziyev",
+            role: "Web & App Developer & CRM Integrator",
+            bio: "Develops web products, Apps, CRM with attention to interface quality, integrations, and practical delivery.",
+            experience:
+              "Market web product delivered with the frontend and backend stack listed in the project portfolio.",
+            projects: ["Market", "Logistic CRM"],
+            skills: [
+              "React",
+              "Node.js",
+              "React Native",
+              "Strapi",
+              "JavaScript",
+              "TypeScript",
+              "Next.js",
+            ],
+          },
+          {
+            initials: "QO",
+            name: "Otabek Qayumov",
+            role: "Backend Developer & Automation Specialist",
+            bio: "Focuses on backend development and automation solutions, ensuring robust server-side functionality and efficient workflows.",
+            experience:
+              "Logistic CRM backend development and automation implementation as listed in the project portfolio.",
+            projects: [
+              "Logistic CRM",
+              "AI Automation System",
+              "Internal Tooling Automation",
+            ],
+            skills: [
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "Python",
+              "Django",
+              "AI Workflow Automation",
+            ],
+          },
+          {
+            initials: "ZJ",
+            name: "Zokirjanov Jasur",
+            role: "Frontend Developer & UI/UX Engineer",
+            bio: "Specializes in frontend development and UI/UX engineering, crafting visually appealing and user-friendly interfaces.",
+            experience:
+              "Market frontend development and UI/UX implementation as listed in the project portfolio.",
+            projects: ["Market"],
+            skills: [
+              "React",
+              "CSS",
+              "UI/UX Design",
+              "Design Systems",
+              "Motion Design",
+            ],
+          },
+        ],
       },
       process: {
         eyebrow: "Process",
@@ -274,6 +351,7 @@ export const resources = {
           capabilities: "Imkoniyatlar",
           portfolio: "Ishlar",
           core: "Yadro",
+          developers: "Developerlar",
           process: "Jarayon",
           contact: "Aloqa",
         },
@@ -375,29 +453,23 @@ export const resources = {
         managedFrom: "works.json orqali boshqariladi",
         technologies: "{{count}} ta texnologiya",
         items: {
-          "atlas-control-layer": {
-            name: "Atlas Control Layer",
-            category: "Enterprise Ops",
+          market: {
+            name: "Market",
+            category: "Savdo platformasi",
             description:
-              "Telemetry, approvals va incident response’ni yagona premium control surface ichiga jamlagan operations markazi.",
+              "Noyob mahsulotlarni sotib olish va sotish uchun zamonaviy marketplace bo'lib, xaridorlar va sotuvchilarni qulay onlayn tajribada bog'laydi.",
           },
-          "pulse-commerce-os": {
-            name: "Pulse Commerce OS",
-            category: "Commerce System",
+          blog: {
+            name: "Crypto Platform",
+            category: "Kripto servis",
             description:
-              "Kontent, analytics va automation bir product tizimi sifatida ishlaydigan storefront va admin ekotizimi.",
+              "Real vaqt bozor ma'lumotlari, portfolio boshqaruvi vositalari va kriptovalyuta olamida ishonchli yo'nalish olishga yordam beruvchi ta'lim resurslarini taqdim etadigan platforma.",
           },
-          "nexa-assist": {
-            name: "Nexa Assist",
-            category: "AI Automation",
+          barber: {
+            name: "Barber Shop",
+            category: "Xizmat",
             description:
-              "Takroriy jarayonlarni aniq va kuzatiladigan avtomatlashtirishga aylantiruvchi AI yordamchi.",
-          },
-          "circuit-mobile": {
-            name: "Circuit Mobile",
-            category: "Mobile Platform",
-            description:
-              "Tez sync, tiniq interaction va desktop bilan umumiy design language’ga ega offline-first field app.",
+              "Soch olish, soqol tekislash va parvarish xizmatlarini qulay hamda yoqimli muhitda taklif qiluvchi zamonaviy barber shop.",
           },
         },
       },
@@ -432,6 +504,78 @@ export const resources = {
             copy: "Performance, structure va deploymentni barqaror qiladi.",
           },
         },
+      },
+      developers: {
+        eyebrow: "Developerlar",
+        title:
+          "UCH portfolio mahsulotlarini yaratgan dasturchilar bilan tanishing.",
+        description:
+          "Jamoa profillarida portfolio loyihalaridagi amaliy tajriba va texnologik ko'nikmalar ko'rsatiladi.",
+        roster: "Jamoa profillari",
+        rosterTitle:
+          "Joriy portfolio ma'lumotlari asosidagi developer profillari.",
+        verified: "Jamoa a'zosi",
+        experience: "Portfolio tajribasi",
+        projects: "Loyihalar",
+        skills: "Ko'nikmalar",
+        socials: "Shaxsiy ijtimoiy tarmoqlar",
+        members: [
+          {
+            initials: "OO",
+            name: "Og'abek Orziyev",
+            role: "Web va App Developer / CRM Integrator",
+            bio: "Interfeys sifati, integratsiyalar va amaliy yetkazib berishga e'tibor qaratib web mahsulotlar, ilovalar va CRM tizimlarini yaratadi.",
+            experience:
+              "Portfolio ro'yxatidagi Market web mahsulotini yaratishda frontend va backend texnologiyalaridan foydalangan.",
+            projects: ["Market", "Logistic CRM"],
+            skills: [
+              "React",
+              "Node.js",
+              "React Native",
+              "Strapi",
+              "JavaScript",
+              "TypeScript",
+              "Next.js",
+            ],
+          },
+          {
+            initials: "QO",
+            name: "Otabek Qayumov",
+            role: "Backend Developer va avtomatlashtirish mutaxassisi",
+            bio: "Backend ishlab chiqish va avtomatlashtirish yechimlariga e'tibor qaratib, barqaror server logikasi hamda samarali workflow'larni yaratadi.",
+            experience:
+              "Logistic CRM backend qismini ishlab chiqish va avtomatlashtirish yechimlarini joriy etish tajribasiga ega.",
+            projects: [
+              "Logistic CRM",
+              "AI Automation System",
+              "Internal Tooling Automation",
+            ],
+            skills: [
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "Python",
+              "Django",
+              "AI Workflow Automation",
+            ],
+          },
+          {
+            initials: "ZJ",
+            name: "Zokirjanov Jasur",
+            role: "Frontend Developer va UI/UX Engineer",
+            bio: "Frontend dasturlash va UI/UX engineering bo'yicha ishlaydi, vizual jihatdan jozibali va foydalanishga qulay interfeyslarni yaratadi.",
+            experience:
+              "Market loyihasida frontend ishlab chiqish va UI/UX implementation bo'yicha tajribaga ega.",
+            projects: ["Market"],
+            skills: [
+              "React",
+              "CSS",
+              "UI/UX Design",
+              "Design Systems",
+              "Motion Design",
+            ],
+          },
+        ],
       },
       process: {
         eyebrow: "Jarayon",
@@ -560,6 +704,7 @@ export const resources = {
           capabilities: "Возможности",
           portfolio: "Работы",
           core: "Ядро",
+          developers: "Разработчики",
           process: "Процесс",
           contact: "Контакт",
         },
@@ -659,29 +804,23 @@ export const resources = {
         managedFrom: "Управляется из works.json",
         technologies: "{{count}} технологий",
         items: {
-          "atlas-control-layer": {
-            name: "Atlas Control Layer",
-            category: "Enterprise Ops",
+          market: {
+            name: "Market",
+            category: "Торговая платформа",
             description:
-              "Операционный центр для telemetry, approvals и incident response в одном premium control surface.",
+              "Современный marketplace для покупки и продажи уникальных товаров, соединяющий покупателей и продавцов в удобном онлайн-пространстве.",
           },
-          "pulse-commerce-os": {
-            name: "Pulse Commerce OS",
-            category: "Commerce System",
+          blog: {
+            name: "Crypto Platform",
+            category: "Крипто-сервис",
             description:
-              "Экосистема storefront и admin, где контент, analytics и automation работают как одна product system.",
+              "Комплексная криптоплатформа с рыночными данными в реальном времени, инструментами управления портфелем и образовательными ресурсами.",
           },
-          "nexa-assist": {
-            name: "Nexa Assist",
-            category: "AI Automation",
+          barber: {
+            name: "Barber Shop",
+            category: "Сервис",
             description:
-              "AI-помощник, который превращает повторяющиеся процессы в понятную и отслеживаемую автоматизацию.",
-          },
-          "circuit-mobile": {
-            name: "Circuit Mobile",
-            category: "Mobile Platform",
-            description:
-              "Offline-first field app с быстрым sync, четкими interaction и общей design language с desktop.",
+              "Современный барбершоп с услугами стрижки, бритья и ухода за бородой в комфортной и приятной атмосфере.",
           },
         },
       },
@@ -716,6 +855,76 @@ export const resources = {
             copy: "Держит performance, structure и deployment стабильными.",
           },
         },
+      },
+      developers: {
+        eyebrow: "Разработчики",
+        title: "Познакомьтесь с разработчиками продуктов из портфолио UCH.",
+        description:
+          "Профили показывают практический опыт и технологический стек, представленные в текущих проектах UCH.",
+        roster: "Профили команды",
+        rosterTitle: "Профили разработчиков на основе текущего портфолио.",
+        verified: "Участник команды",
+        experience: "Опыт в портфолио",
+        projects: "Проекты",
+        skills: "Навыки",
+        socials: "Личные профили",
+        members: [
+          {
+            initials: "OO",
+            name: "Og'abek Orziyev",
+            role: "Web и App Developer / CRM Integrator",
+            bio: "Создает веб-продукты, приложения и CRM-системы с акцентом на качество интерфейса, интеграции и практичный delivery.",
+            experience:
+              "Работал над веб-продуктом Market с применением frontend- и backend-технологий, представленных в портфолио.",
+            projects: ["Market", "Logistic CRM"],
+            skills: [
+              "React",
+              "Node.js",
+              "React Native",
+              "Strapi",
+              "JavaScript",
+              "TypeScript",
+              "Next.js",
+            ],
+          },
+          {
+            initials: "QO",
+            name: "Otabek Qayumov",
+            role: "Backend Developer и специалист по автоматизации",
+            bio: "Занимается backend-разработкой и автоматизацией, обеспечивая надежную серверную логику и эффективные workflow.",
+            experience:
+              "Имеет опыт разработки backend-части Logistic CRM и реализации решений для автоматизации.",
+            projects: [
+              "Logistic CRM",
+              "AI Automation System",
+              "Internal Tooling Automation",
+            ],
+            skills: [
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "Python",
+              "Django",
+              "AI Workflow Automation",
+            ],
+          },
+          {
+            initials: "ZJ",
+            name: "Zokirjanov Jasur",
+            role: "Frontend Developer и UI/UX Engineer",
+            bio: "Специализируется на frontend-разработке и UI/UX engineering, создавая привлекательные и удобные интерфейсы.",
+            experience:
+              "Имеет опыт frontend-разработки и реализации UI/UX для проекта Market.",
+            projects: ["Market"],
+            skills: [
+              "React",
+              "CSS",
+              "UI/UX Design",
+              "Design Systems",
+              "Motion Design",
+            ],
+          },
+        ],
       },
       process: {
         eyebrow: "Процесс",

@@ -4,10 +4,21 @@
     "name": "Market",
     "category": "Consumer",
     "description": "A modern marketplace for buying and selling unique products, connecting buyers and sellers in a seamless online experience.",
-    "asset": "/public/img/market.png",
+    "asset": "/img/market.png",
     "liveUrl": "https://market-hpz4b0ikg-ogabeks-projects-e228d171.vercel.app/",
     "stack": ["React", "Node", "Express", "MongoDB"],
     "year": "2026",
+    "layout": "lg:col-span-7 lg:min-h-[30rem]"
+  },
+  {
+    "id": "blog",
+    "name": "Crypto Platform",
+    "category": "Service",
+    "description": "A comprehensive crypto platform that provides users with real-time market data, portfolio management tools, and educational resources to navigate the world of cryptocurrencies with confidence.",
+    "asset": "/img/crypto.png",
+    "liveUrl": "https://cryptox26.netlify.app/",
+    "stack": ["React", "Node", "Express", "CoinGecko API"],
+    "year": "2025",
     "layout": "lg:col-span-7 lg:min-h-[30rem]"
   },
   {
@@ -15,7 +26,7 @@
     "name": "Barber Shop",
     "category": "Service",
     "description": "A stylish and modern barber shop offering a range of grooming services, including haircuts, shaves, and beard trims, in a comfortable and welcoming environment.",
-    "asset": "/public/img/barber.png",
+    "asset": "/img/barber.png",
     "liveUrl": "https://bymcutsp9rj.setmore.com/",
     "stack": ["React", "Node", "MongoDB", "Setmore"],
     "year": "2025",

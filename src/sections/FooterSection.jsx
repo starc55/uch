@@ -1,13 +1,8 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-optimized.png";
 import SocialLink from "../components/SocialLink";
-
-const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/uchdev" },
-  { label: "Telegram", href: "https://t.me/uchcompany" },
-  { label: "Instagram", href: "https://www.instagram.com/uchdev.official?igsh=YWVsdXdieTZnMDM4" },
-];
+import { officialSocialLinks } from "../data/socialLinks";
 
 function FooterSection() {
   const { t } = useTranslation();
@@ -31,6 +26,8 @@ function FooterSection() {
                 <img
                   src={logo}
                   alt="UCH"
+                  loading="lazy"
+                  decoding="async"
                   className="h-14 w-14 rounded-2xl border border-white/10 bg-white/[0.02] p-2 object-contain"
                 />
                 <div>
@@ -92,7 +89,7 @@ function FooterSection() {
                   {t("footer.socialLinks")}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  {socialLinks.map((link) => (
+                  {officialSocialLinks.map((link) => (
                     <SocialLink key={link.label} {...link} />
                   ))}
                 </div>

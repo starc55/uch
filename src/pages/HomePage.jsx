@@ -6,6 +6,7 @@ import useMouseGlow from "../hooks/useMouseGlow";
 import CapabilitiesSection from "../sections/CapabilitiesSection";
 import ContactSection from "../sections/ContactSection";
 import CoreSection from "../sections/CoreSection";
+import DevelopersSection from "../sections/DevelopersSection";
 import FooterSection from "../sections/FooterSection";
 import HeroSection from "../sections/HeroSection";
 import PortfolioSection from "../sections/PortfolioSection";
@@ -15,6 +16,7 @@ const navigationItems = [
   "capabilities",
   "portfolio",
   "core",
+  "developers",
   "process",
   "contact",
 ].map((id) => ({
@@ -83,6 +85,20 @@ function HomePage() {
       return;
     }
 
+    const supportsEnhancedNavigation =
+      window.matchMedia(
+        "(min-width: 1024px) and (hover: hover) and (pointer: fine)"
+      ).matches &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!supportsEnhancedNavigation) {
+      const offset = id === "hero" ? 0 : 96;
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({ top: Math.max(top, 0), behavior: "instant" });
+      return;
+    }
+
     element.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -112,6 +128,9 @@ function HomePage() {
           </div>
           <div data-scroll-section>
             <CoreSection />
+          </div>
+          <div data-scroll-section>
+            <DevelopersSection />
           </div>
           <div data-scroll-section>
             <ProcessSection />

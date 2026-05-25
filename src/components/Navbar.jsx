@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-optimized.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar({ items, onNavigate, scrolled }) {
@@ -10,7 +10,7 @@ function Navbar({ items, onNavigate, scrolled }) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
+      if (window.innerWidth >= 1280) {
         setMenuOpen(false);
       }
     };
@@ -34,7 +34,7 @@ function Navbar({ items, onNavigate, scrolled }) {
           <motion.button
             type="button"
             aria-label="Close navigation menu"
-            className="fixed inset-0 z-40 bg-black/55 backdrop-blur-md lg:hidden"
+            className="fixed inset-0 z-40 bg-black/55 backdrop-blur-md xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -77,6 +77,7 @@ function Navbar({ items, onNavigate, scrolled }) {
                 <img
                   src={logo}
                   alt="UCH"
+                  decoding="async"
                   className="h-12 w-12 object-contain sm:h-14 sm:w-14"
                 />
                 <div className="text-left">
@@ -87,7 +88,7 @@ function Navbar({ items, onNavigate, scrolled }) {
                 </div>
               </button>
 
-              <div className="hidden items-center gap-3 lg:flex">
+              <div className="hidden items-center gap-3 xl:flex">
                 <nav className="flex items-center gap-2">
                   {items.map((item) => (
                     <button
@@ -119,7 +120,7 @@ function Navbar({ items, onNavigate, scrolled }) {
                     menuOpen ? "Close navigation menu" : "Open navigation menu"
                   }
                   onClick={() => setMenuOpen((current) => !current)}
-                  className="group relative flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition hover:border-accent/35 hover:bg-accent/10 lg:hidden"
+                  className="group relative flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] transition hover:border-accent/35 hover:bg-accent/10 xl:hidden"
                 >
                   <motion.span
                     className="absolute h-px w-5 bg-white"
@@ -149,7 +150,7 @@ function Navbar({ items, onNavigate, scrolled }) {
             <AnimatePresence>
               {menuOpen && (
                 <motion.div
-                  className="overflow-hidden lg:hidden"
+                  className="overflow-hidden xl:hidden"
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}

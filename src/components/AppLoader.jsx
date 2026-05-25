@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo-optimized.png";
 
 function AppLoader() {
   const { t } = useTranslation();

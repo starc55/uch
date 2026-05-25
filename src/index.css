@@ -43,6 +43,14 @@ html.has-scroll-smooth {
   min-height: 100vh;
 }
 
+section[id] {
+  scroll-margin-top: 6.75rem;
+}
+
+#hero {
+  scroll-margin-top: 0;
+}
+
 .c-scrollbar {
   width: 10px;
 }
@@ -150,5 +158,26 @@ body::before {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media (max-width: 767px) {
+  body::before {
+    position: absolute;
+    opacity: 0.12;
+  }
+
+  .page-shell .backdrop-blur-xl,
+  .page-shell .backdrop-blur-2xl,
+  .page-shell .section-frame,
+  .page-shell .terminal-panel {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

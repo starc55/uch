@@ -74,46 +74,46 @@ function HeroSection({ mousePosition, onPrimaryClick, onSecondaryClick }) {
           </motion.div>
 
           <motion.div
-            className="section-frame relative z-10 overflow-hidden p-6"
+            className="section-frame relative z-10 overflow-hidden p-5"
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.18 }}
           >
             <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/80 to-transparent" />
-            <div className="space-y-8">
-              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-4">
+            <div className="space-y-5">
+              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3">
                 <div>
                   <p className="font-mono text-xs uppercase tracking-[0.26em] text-accent/82">
                     {t("hero.signal")}
                   </p>
-                  <p className="mt-2 text-sm text-white/72">
+                  <p className="mt-1.5 text-sm text-white/72">
                     {t("hero.signalValue")}
                   </p>
                 </div>
                 <div className="h-3 w-3 animate-pulse rounded-full bg-accent shadow-[0_0_18px_rgba(0,209,255,0.9)]" />
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {pillars.map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-[1.5rem] border border-white/10 bg-black/25 px-4 py-4"
+                    className="rounded-[1.35rem] border border-white/10 bg-black/25 px-4 py-3"
                   >
                     <p className="text-sm font-medium text-white">
                       {item.title}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/52">
+                    <p className="mt-1.5 text-sm leading-5 text-white/52">
                       {item.copy}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="rounded-[1.75rem] border border-accent/18 bg-accent/10 p-5">
+              <div className="rounded-[1.5rem] border border-accent/18 bg-accent/10 p-4">
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-accent/84">
                   {t("hero.mode")}
                 </p>
-                <div className="mt-4 space-y-3">
+                <div className="mt-3 space-y-2.5">
                   <div className="flex items-center justify-between text-sm text-white/70">
                     <span>{t("hero.modeLeft")}</span>
                     <span>{t("hero.modeRight")}</span>
